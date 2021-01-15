@@ -1,51 +1,25 @@
 /* Don't forget to embed the font*/
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+
+
 :root{
     --header-height: 3rem;
-    --font-medium: 500; /*this is for the font medium size*/
 }
 
 
 /*Colors*/
 :root{
     --dark-blue: #00004A;
-    --white: #fafaff;
+    --white: #ffffff;
     --black: #000000;
     --blue: #0300a1;
 }
 
-/* notification styles */
 
 
-/* Fonts*/
+/* Font*/
 :root{
     --body-font:  'DM Sans', sans-serif;
-    --big-font: 2rem;
-    --text-font: 1.125rem;
-}
-
-/* Responsiveness variables */
-@media screen and (min-width: 768px){
-    :root{
-        --big-font: 3.437rem;
-        --desktop: 5rem;
-        --h2-font: 2rem;
-        --normal-font: 1rem;
-        --small-font: .875rem;
-    }
-}
-
-/*Margins*/
-:root{
-    --m1: .5rem;
-    --m2: 1rem;
-    --m3: 1.5rem;
-    --m4: 2rem;
-}
-
-/*Index*/
-:root{
-    --fixed: 100;
 }
 
 
@@ -62,18 +36,25 @@ html{
 body{
     margin: var(--header-height) 0 0 0;
     font-family: var(--body-font);
-    font-size: var(--normal-font);
-    font-weight: var(--font-medium);
-    color: var(--text);
+    background-color: #fafafa;
     line-height: 1.6;
 }
 
 h1,h2,p {
     margin: 0;
-    display: flex;
-    
 }
 
+.top-nav {
+    display: flex;
+    background-color: var(--blue);
+    justify-content: center;
+    padding: 10px 0;
+}
+
+#top {
+    padding: 10px 10px;
+    color: #ffffff;
+}
 
 ul {
     margin: 0;
