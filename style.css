@@ -44,16 +44,15 @@
     box-sizing: border-box;
 }
 
-html{
-    scroll-behavior: smooth;
-}
-
-body{
+html, body{
     margin: var(--header-height) 0 0 0;
     font-family: var(--body-font);
     background-color: #fafafa;
     line-height: 1.6;
+    height: 100vh;
+    scroll-behavior: smooth;
 }
+
 
 h1,h2,p {
     margin: 0;    
@@ -210,47 +209,68 @@ img {
     padding: 5rem var(--header-height);
 }
 
-.news {
+.grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+}
+
+
+.grid .content {
+    padding: 35px 0px;
+}
+
+
+
+.grid .newsImg {
+  position: relative;
+  background-image: url("Images/masked.jpg");
+  height: 400px;
+  width: 100%;
+}
+
+.grid .newsImg::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.grid .newsImg .overlay {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: whitesmoke;
+  font-size: 30px;
+}
+
+.grid div:nth-child(2) {
+  height: 100%;
+  background-color: #e6e6e6;
+}
+
+.grid div:nth-child(2) .content {
+  width: 50%;
+  text-align: center;
+}
+
+.recent {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+.achievement-container {
+    margin-top: 3rem;
+}
+
+.overlay-2 {
     text-align: center;
+    padding: 15px 30px;
 }
-
-.news-updates {
-    font-size: 18px;
-    font-weight: 500;
-}
-
-.news-container {
-    margin: 0;
-    display: grid;
-    grid-template-rows: auto auto;
-    row-gap: 0;
-}
-
-.news-img {
-    position: relative;
-    overflow: hidden;
-}
-
-.caption {
-    position: absolute;
-    align-items: flex-start;
-    justify-content: center;
-    bottom: -100%;
-    display: flex;
-    width: 40%;
-}
-
-.caption-title {
-    margin-top: 1rem;
-    color: var(--white);
-}
-
-.news-link {
-    background-color: #e6e6e6;
-    width: 720px;
-    height: 676px;
-}
-
 
 
 
@@ -328,19 +348,106 @@ img {
         font-weight: 700;
     }
 
-    .news-updates {
-        font-size: 25px;
-        font-weight: 700;
+    .backgroundFix {
+        background-image: url('Images/masked.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      
+    .centered {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+      }
+      
+    .grid {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+      }
+
+      .achievement-container {
+          text-align: center;
+          margin: 10rem 0;
+      }
+
+      .achieve-img {
+          width: 100%;
+          height: 320px;
+      }
+
+      .overlay-2 {
+        position: absolute;
+        background-color: var(--white);
+        padding: 5rem 10rem;
+        text-align: center;
+        margin-left: 20rem;
+        margin-right: 20rem;
+        margin-top: 20rem;
     }
+
 
     .footer-wrapper {
         width: 100%;
-        height: auto;
         clear: both;
-        position: relative;
-        margin-top: 100px;
+        position: absolute;
+        bottom: 0;
+        margin-top: 150rem;
         background-color: var(--blue);
     }
+
+
+
+    .footer-container{
+        background-size: cover;
+        padding: 100px 40px;
+        text-align: center;
+        color: white;
+    }
+
+      .container p {
+        max-width: 600px;
+        margin: 40px auto;
+        font-size: 15px;
+        font-weight: 300;
+      }
+      .email-box{
+        height: 40px;
+        justify-content: center;
+        display: flex; /*its better to use inline-flex*/
+      }
+      .email-box i{
+        background: #2f3542;
+        width: 40px;
+        line-height: 40px;
+      }
+      .tbox,.btn{
+        border: none;
+        outline: none;
+      }
+      .tbox{
+        width: 0px;
+        transition: 0.6s;
+      }
+      .email-box:hover > .tbox,.tbox:focus{
+        width: 260px;
+        padding: 0 10px;
+      }
+      .btn{
+        background: #2f3542;
+        color: white;
+        padding: 0 10px;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
 
 
 }
@@ -354,3 +461,41 @@ img {
     }
 }
 
+@media (max-width: 650px) {
+    .recent {
+      -ms-grid-columns: 1fr;
+          grid-template-columns: 1fr;
+    }
+  }
+  
+  .recent div > .overlay {
+    position: relative;
+    height: 300px;
+    color: whitesmoke;
+  }
+  
+  .recent div > .overlay h3 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 70%;
+  }
+  
+  .recent div > .overlay a {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: whitesmoke;
+  }
+  
+  .recent > div {
+    background-color: #00004a;
+  }
+  
+  .recent > div:nth-child(2) {
+    background-color: #dfae00;
+  }
+  
+  .recent > div:nth-child(3) {
+    background-color: #e6e6e6;
+  }
