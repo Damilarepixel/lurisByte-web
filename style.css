@@ -24,6 +24,21 @@
 
 
 
+/*Margins*/
+:root{
+    --m1: .5rem;
+    --m2: 1rem;
+    --m3: 1.5rem;
+    --m4: 2rem;
+}
+
+/*Index*/
+:root{
+    --fixed: 100;
+}
+
+
+
 /*Basics*/
 *,::before,::after{
     box-sizing: border-box;
@@ -41,7 +56,7 @@ body{
 }
 
 h1,h2,p {
-    margin: 0;
+    margin: 0;    
 }
 
 .top-nav {
@@ -73,19 +88,6 @@ img {
     height: auto;
 }
 
-
-/* Section */
-.section {
-    padding: 3rem 0;
-    text-align: center;
-    justify-self: center;
-    align-self: center;
-}
-
-.section-title {
-    color: var(--black);
-    text-align: center;    
-}
 
 
 /* Layout */
@@ -138,6 +140,8 @@ img {
 .nav__link{
     position: relative;
     color: var(--black);
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .nav__link:hover{
@@ -160,115 +164,96 @@ img {
     right: 0;
 }
 
-/* Active menu */
-.active::after{
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: .18rem;
-    left: 0;
-    top: 2rem;
-    background-color: var(--main);
-}
 
-/* home */
 .home {
-    position: relative;
     background-image: url("Images/main.jpg");
-    overflow: hidden;
-    background-size: cover;
+    height: 100vh;
     text-align: center;
-    padding: 2rem;
+    align-self: center;
+    padding-top: 5rem;
 }
 
-.home__container {
-    height: calc(70vh - var(--header-height));
+
+.home-container {
+    padding: 10px 10px;
 }
 
-.home__title {
-    margin-top: .8rem;
-    align-self: flex-end;
-    font-size: var(--big-font);
-    font-weight: 700;
+
+.home-intro {
     color: var(--white);
-}
+    font-size: 30px;
+    font-weight: 700;
+    margin: 3rem 0;
 
-
-.home__accent {
-    color: var(--dark-blue);
 }
 
 .intro-text {
     color: var(--white);
-    margin-top: 17px;
-    font-size: var(--text-font);
+    font-size: 15px;
     font-weight: 400;
 }
 
-
-button {
+.join-cta {
     background-color: var(--dark-blue);
-    border-radius: 4px;
+    padding: 20px 15%;
     border: none;
-    padding: 20px 10%;
+    border-radius: 4px;
     color: var(--white);
-    font-size: 20px;
-    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 3rem 0;
 }
 
+.mission {
+    text-align: center;
+    align-self: center;
+    padding: 5rem var(--header-height);
+}
 
-
-/* About section */
-.about__container {
-    justify-items: center;
+.news {
     text-align: center;
 }
 
-
-
-.about__text {
-    margin-bottom: var(--m4);
+.news-updates {
+    font-size: 18px;
+    font-weight: 500;
 }
 
+.news-container {
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto auto;
+    row-gap: 0;
+}
 
-/* .about__social-icon {
-    font-size: 1.4rem;
-    margin: 0 var(--m1);
-} */
+.news-img {
+    position: relative;
+    overflow: hidden;
+}
 
-
-
-
-/* portfolio */
-.portfolio {
-    text-align: center;
+.caption {
+    position: absolute;
+    align-items: flex-start;
     justify-content: center;
-}
-
-
-
-
-
-
-.footer-copy {
-    background-color: var(--main);
+    bottom: -100%;
     display: flex;
-    justify-content: center;
-    width: 100%;
+    width: 40%;
+}
+
+.caption-title {
+    margin-top: 1rem;
     color: var(--white);
 }
 
-.contactPopupContainer {
-    position: fixed;
-    bottom : -10%;
-    left : 20px;
-    transition : .5s all ease;
-    border-radius: 10px;
-    display : inline-block;
-    background-color: #000;
-    color  :#fff;
-    padding : 5px 15px;
+.news-link {
+    background-color: #e6e6e6;
+    width: 720px;
+    height: 676px;
 }
+
+
+
+
 
 
 
@@ -276,19 +261,6 @@ button {
 @media screen and (min-width: 768px){
     body{
         margin: 0;
-    }
-
-    .section{
-        padding-top: 4rem;
-    }
-
-    .section-title{
-        margin-bottom: 3rem;
-    }
-
-    .section-title::after{
-        width: 64px;
-        top: 3rem;
     }
 
     .nav{
@@ -316,79 +288,58 @@ button {
         color: var(--blue);
     }
 
-    .active::after{
-        background-color: var(--dark-blue);
+    .home {
+        text-align: start;
+        padding: 7rem 0;
     }
-
-    .home__container{
-        height: 100vh;
-        margin-top: 2rem;
-        grid-template-rows: 1.7fr 1fr;
-        row-gap: 0;
-    }
-
-    .home__name{
-        font-size: 5rem;
-    }
-
-    .about__container{
-        grid-template-columns: repeat(2, 1fr);
-        align-items: center;
-        text-align: initial;
-        padding: 4rem 0;
-    }
-
-    .about__img{
-        width: 200px;
-        height: 200px;
-    }
-
-    .about__img img{
-        width: 200px;
-        height: 200px;
-    }
-
-    .about__social-icon {
-        font-size: 2rem;
-        margin: 0 var(--m1);
-    }
-
-
-    .portfolio__container{
-        display: block;
-        margin: 0;
-        text-align: center;
-    }
-
-
-    .grid-container {
-        display: grid;
-        grid-template-columns: auto auto;
-        padding: 0;
-        margin: 0;
-        
-    }
-
-    .grid-item {
-        background-image: url("Images/masked.jpg");
-        max-height: 720px;
-        background-size: contain;
-        padding: 1.5rem auto;
-    }
-
-    .grid-item-2 {
-        width: 100%;
-        background-color: #e6e6e6;
-    }
-
     
+    
+    .home-container {
+        margin-left: 10rem;
+        margin-right: 25rem;
+    }
+    
+    
+    .home-intro {
+        color: var(--white);
+        font-size: 55px;
+        font-weight: 700;
+    }
+    
+    .intro-text {
+        color: var(--white);
+        font-size: 18px;
+        font-weight: 400;
+    }
+    
+    .join-cta {
+        padding: 20px 5%;
+        margin: 3rem 10rem;
+    }
 
-    .footer-copy {
-        display: flex;
-        justify-items: center;
+    .mission {
         text-align: center;
-        justify-self: center;
-        align-items: center;
+        align-self: center;
+        padding: 5rem 10rem;
+    }
+
+    .mission-statement {
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    .news-updates {
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    .footer-wrapper {
+        width: 100%;
+        height: auto;
+        clear: both;
+        position: relative;
+        margin-top: 100px;
+        background-color: var(--blue);
     }
 
 
