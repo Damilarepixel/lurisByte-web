@@ -201,6 +201,7 @@ img {
     font-size: 18px;
     font-weight: 400;
     margin: 3rem 0;
+    cursor: pointer;
 }
 
 .mission {
@@ -395,7 +396,7 @@ img {
     }
 
 
-    .footer-wrapper {
+    /* .footer-wrapper {
         width: 100%;
         bottom: 0;
         background-color: var(--blue);
@@ -408,43 +409,49 @@ img {
         padding: 100px 40px;
         text-align: center;
         color: white;
-    }
+    } */
 
-      .container p {
+    /* .container p {
         max-width: 600px;
         margin: 40px auto;
         font-size: 15px;
         font-weight: 300;
-      }
-      .email-box{
+    }
+    
+    .email-box{
         height: 40px;
         justify-content: center;
-        display: flex; /*its better to use inline-flex*/
-      }
-      .email-box i{
+        display: flex; 
+    }
+    
+    .email-box i{
         background: #2f3542;
         width: 40px;
         line-height: 40px;
-      }
-      .tbox,.btn{
+    }
+    
+    .tbox,.btn{
         border: none;
         outline: none;
-      }
-      .tbox{
+    }
+    
+    .tbox{
         width: 0px;
         transition: 0.6s;
-      }
-      .email-box:hover > .tbox,.tbox:focus{
+    }
+    
+    .email-box:hover > .tbox,.tbox:focus{
         width: 260px;
         padding: 0 10px;
-      }
-      .btn{
+    }
+
+    .btn{
         background: #2f3542;
         color: white;
         padding: 0 10px;
         text-transform: uppercase;
         cursor: pointer;
-      }
+    } */
 
 
 }
